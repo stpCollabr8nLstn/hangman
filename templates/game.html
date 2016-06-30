@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Game Room{% endblock %}
+{% block content %}
+  {% if g.user %}
+    {# Show Loading until 2 players #}
+    <div id="waiting_room" game_word="{{ game.word }}">
+
+      Waiting for another player...
+      <div id="loading" class="fa fa-spinner"></div>
+
+    </div>
+
+    {# Game play area - hide initially then show #}
+    <div id="play-area" >
+    <p>Use the alphabet below to guess the word. Figure it out before the other player and win!</p>
+      <br><div id="letter-container"></div><br>
+      <div id="word-container"></div>
+    </div>
+
+    {# Game chat area #}
+    <div id="chat-area" data-user="{{ g.user.login }}" data-key="{{ room }}">
+      <h3>Game Room Chat:</h3>
+        <ul id="messages"></ul>
+        <form class="pure-form chat-input" action="" id="chat">
+          <input type="hidden" id="r_id" name="r_id" value="{{ room }}">
+          <label for="m">Message:</label>
+          <input type="text" id="m" name="m" autocomplete="off">
+          <button class="pure-button pure-button-primary">Send</button>
+        </form>
+    </div>
+
+  {# Show this if not logged in #}
+  {% else %}
+    <h2>Log in to play!</h2>
+    <a class="pure-button-primary pure-button" href="/login">Login!</a>
+  {% endif %}
+
+  <script>
+  var game = '{{ room }}';
+  var csrfToken = '{{ session.csrf_token }}';
+  var uid = {{ g.user.id }};
+  </script>
+  <script src="/static/js/game.js"></script>
+  <script src="/static/js/chat.js"></script>
+{% endblock %}

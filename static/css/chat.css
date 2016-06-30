@@ -1,0 +1,83 @@
+#userlist li {
+    list-style: none;
+}
+.fa-user {
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f007";
+}
+#room_list {
+    width: 50%;
+}
+#room_list a {
+    color: #FE0557;
+    text-align: center;
+    border-radius: 5px;
+}
+    #room_list .pure-menu-link:hover,
+    #room_list .pure-menu li a:focus {
+        background: #E1EACB;
+    }
+.chat-users {
+    margin-left: 10pt;
+    height: 5em;
+    overflow-y: scroll;
+}
+.chat .chat-input {
+  display: flex;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+/* don't stretch the label */
+.chat .chat-input label {
+  flex-grow: 0;
+}
+/* stretch the input */
+.chat .chat-input input {
+  flex-grow: 1;
+  margin: 0 3pt;
+}
+/* don't stretch the button */
+.chat .chat-input button {
+  flex-grow: 0;
+}
+#messages {
+  padding: 0;
+  height: 15em;
+  width: 70%;
+  overflow-y: scroll;
+}
+#messages li {
+  display: block;
+  padding-left: 0;
+  font-family: "Open Sans", sans-serif;
+  border: solid 1px;
+  border-radius: 1ex;
+  margin-bottom: 1ex;
+  padding: 1ex;
+}
+#messages li.sent {
+  float: right;
+  clear: both;
+  max-width: 60%;
+  background-color: #a3cfb8;
+  color: #400403;
+}
+#messages li.received {
+    float: left;
+    clear: both;
+    max-width: 60%;
+    background-color: #f27b90;
+    color: #400403;
+}
+
+.chat {
+    padding-right: 50pt;
+    border-right: 1px solid #FE0557;
+    width: 75%;
+
+}
+
+#chat-area input {
+    width: 50%;
+}

@@ -1,0 +1,72 @@
+html {
+    color: #2A0308;
+}
+#banner-img {
+    background-image: url("/static/img/banner.png");
+    background-repeat: repeat-x;
+    height: 35pt;
+}
+img.hangman {
+  width: 304px;
+  height: 228px;
+}
+#profile-container {
+    padding-top: 15pt;
+}
+
+.pure-button {
+  background-color: #E2AC3F;
+  color: #2A0308;
+}
+
+button.unused.pure-button {
+  color: white;
+  background-color: #7BA58D;
+  border: solid 2px #E2AC3F;
+  margin-right: 5pt;
+  margin-bottom: 5pt;
+}
+
+.pure-button-primary.pure-button {
+    background-color: #7BA58D;
+}
+h2 {
+    color: #924F1B;
+}
+.content {
+    padding-top: 25pt;
+}
+
+input#gameroom {
+    width: 50%;
+    min-width:300px;
+    max-width:600px;
+    -webkit-flex: 1;
+}
+.tag-line {
+  display: inline-block;
+  padding-right: 15pt;
+  color: #534d41;
+}
+#word-container {
+  font-size: 1.5em;
+}
+@keyframes our-spin {
+    0% {
+        transform: rotate(0deg);
+        color: #000000;
+    }
+    100% {
+        transform: rotate(359deg);
+        color: black;
+    }
+}
+#loading {
+  content: "\f110";
+  animation: our-spin 2s infinite linear;
+  font-size: 10em;
+}
+
+#main {
+    height: 200%;
+}

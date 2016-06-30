@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ user.login }}{% endblock %}
+{% block content %}
+    <div id="profile-shell" data-user-id="{{ user.id }}">
+        <img class="user-avatar" src="https://www.gravatar.com/avatar/{{ user.grav_hash }}">
+        <div id="user-info">
+            <h1>User {{ user.login }}</h1>
+            <p><em>Note: To change your avatar update your email below or visit
+                <a href="https://en.gravatar.com/" target="_blank">Gravatar</a></em></p>
+        </div>
+    </div>
+{% endblock %}

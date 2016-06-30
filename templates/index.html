@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Hangman{% endblock %}
+{% block content %}
+<h1 class="tag-line">Come play with us</h1>
+  {% if g.user %}
+    <a class="pure-button-primary pure-button" id="new-game-button" href="{{ url_for('request_game', uid=g.user.id) }}">New Game</a>
+
+  {% else %}
+    <a class="pure-button-primary pure-button" href="/login">Login!</a>
+  {% endif %}
+  <div class="hanging-man">
+    <br><br><img src="http://gdurl.com/W6xY" alt="hangman" class="hangman">
+  </div>
+
+    <script src="/static/js/chat.js"></script>
+{% endblock %}
